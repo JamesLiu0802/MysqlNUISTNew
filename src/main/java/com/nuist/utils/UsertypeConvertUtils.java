@@ -3,7 +3,6 @@ package com.nuist.utils;
 import com.nuist.bean.ConvertDepartment;
 import com.nuist.bean.Department;
 import com.nuist.bean.DepartmentResponse;
-import com.sun.corba.se.spi.ior.iiop.IIOPFactories;
 
 import java.util.List;
 
@@ -11,7 +10,14 @@ import static com.nuist.test.TestJunit.*;
 
 public class UsertypeConvertUtils {
 
-    //教职工
+    /**
+     * 获取教职工添加数据时的部门id
+     * @param departments
+     * @param departmentId
+     * @param Roomname
+     * @return
+     * @throws Exception
+     */
     public static String getStuffingDepartmentId(List<Department> departments, String departmentId, String Roomname) throws Exception {
 
         DepartmentResponse departmentResponse = departmentService.selectService(access_token, "");
@@ -93,7 +99,15 @@ public class UsertypeConvertUtils {
         }
         return id;
     }
-    //学生
+
+    /**
+     * 获取学生的添加数据时的部门id
+     * @param departments
+     * @param departmentId
+     * @param Roomname
+     * @return
+     * @throws Exception
+     */
     public static String getStuDepartmentId(List<Department> departments, String departmentId, String Roomname) throws Exception {
         DepartmentResponse departmentResponse = departmentService.selectService(access_token, "");
         //获取企业微信后台教职工的部门id
@@ -168,10 +182,18 @@ public class UsertypeConvertUtils {
         }
         return id;
     }
-    //离退休人员
+
+    /**
+     * 获取离退休人员添加数据时的部门id
+     * @param departments
+     * @param departmentId
+     * @param Roomname
+     * @return
+     * @throws Exception
+     */
     public static String getRetireDepartmentId(List<Department> departments,  String departmentId, String Roomname) throws Exception {
         DepartmentResponse departmentResponse = departmentService.selectService(access_token, "");
-        //获取企业微信后台教职工的部门id
+        //获取企业微信后台离退休人员的部门id
         String selectId = "";
         for (int i = 0;i < departmentResponse.getDepartment().size();i++){
             if (departmentResponse.getDepartment().get(i).getName().equals("离退休人员")){
@@ -236,7 +258,15 @@ public class UsertypeConvertUtils {
         return id;
 
     }
-    //校友
+
+    /**
+     * 获取校友添加数据时的部门id
+     * @param departments
+     * @param departmentId
+     * @param Roomname
+     * @return
+     * @throws Exception
+     */
     public static String getGraduateDepartmentId(List<Department> departments, String departmentId, String Roomname) throws Exception {
         DepartmentResponse departmentResponse = departmentService.selectService(access_token, "");
         //获取企业微信后台校友的部门id
@@ -305,7 +335,15 @@ public class UsertypeConvertUtils {
         return id;
 
     }
-    //临时工
+
+    /**
+     * 获取临时工添加数据时的部门id
+     * @param departments
+     * @param departmentId
+     * @param Roomname
+     * @return
+     * @throws Exception
+     */
     public static String getTempDepartmentId(List<Department> departments, String departmentId, String Roomname) throws Exception {
         DepartmentResponse departmentResponse = departmentService.selectService(access_token, "");
         //获取企业微信后台教职工的部门id
@@ -373,13 +411,20 @@ public class UsertypeConvertUtils {
         return id;
     }
 
-    //部门自聘人员
+    /**
+     * 获取部门自聘人员添加数据时的部门id
+     * @param departments
+     * @param departmentId
+     * @param Roomname
+     * @return
+     * @throws Exception
+     */
     public static String getRecruitDepartmentId(List<Department> departments, String departmentId, String Roomname) throws Exception {
         DepartmentResponse departmentResponse = departmentService.selectService(access_token, "");
         //获取企业微信后台教职工的部门id
         String selectId = "";
         for (int i = 0;i < departmentResponse.getDepartment().size();i++){
-            if (departmentResponse.getDepartment().get(i).getName().equals("临时工")){
+            if (departmentResponse.getDepartment().get(i).getName().equals("部门自聘人员")){
                 selectId = departmentResponse.getDepartment().get(i).getId();
                 break;
             }
@@ -441,13 +486,20 @@ public class UsertypeConvertUtils {
         return id;
     }
 
-    //兼职教职工
+    /**
+     * 获取兼职教职工添加数据时的部门id
+     * @param departments
+     * @param departmentId
+     * @param Roomname
+     * @return
+     * @throws Exception
+     */
     public static String getPartDepartmentId(List<Department> departments, String departmentId, String Roomname) throws Exception {
         DepartmentResponse departmentResponse = departmentService.selectService(access_token, "");
         //获取企业微信后台教职工的部门id
         String selectId = "";
         for (int i = 0;i < departmentResponse.getDepartment().size();i++){
-            if (departmentResponse.getDepartment().get(i).getName().equals("临时工")){
+            if (departmentResponse.getDepartment().get(i).getName().equals("兼职教职工")){
                 selectId = departmentResponse.getDepartment().get(i).getId();
                 break;
             }

@@ -67,7 +67,7 @@ public class ConvertUtils {
                     departments.add(UsertypeConvertUtils.getPartDepartmentId(
                             depts, users.get(i).getDepartment(),users.get(i).getRoomname()));
                     break;
-                case "部门招聘人员" :
+                case "部门自聘人员" :
                     departments.add(UsertypeConvertUtils.getRecruitDepartmentId(
                             depts, users.get(i).getDepartment(),users.get(i).getRoomname()));
                     break;
